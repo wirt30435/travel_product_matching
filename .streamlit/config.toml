@@ -1,0 +1,22 @@
+[server]
+# 伺服器設定
+# Cloud Run/容器環境由環境變數 PORT 控制，不在此硬編碼
+address = "0.0.0.0"
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+# 瀏覽器設定
+gatherUsageStats = false
+
+[theme]
+# 主題設定
+primaryColor = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+
+[client]
+# 客戶端設定
+showErrorDetails = true
