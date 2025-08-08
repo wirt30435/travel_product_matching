@@ -30,7 +30,11 @@ def check_password():
     """檢查密碼"""
     def password_entered():
         """檢查輸入的密碼"""
-        app_password = os.getenv('APP_PASSWORD', 'default_password')
+        app_password = os.getenv('APP_PASSWORD')
+        if not app_password:
+            st.error("⚠️ 系統配置錯誤：未設定存取密碼。請聯絡系統管理員。")
+            st.stop()
+        
         if st.session_state.get("password", "") == app_password:
             st.session_state["password_correct"] = True
             st.session_state["login_time"] = datetime.now()
